@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 2%;
+    --foreground: 0 0% 95%;
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 0 100% 56%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 24 100% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 0 0% 10%;
+    --accent-foreground: 0 0% 95%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 12%;
+    --input: 0 0% 12%;
+    --ring: 0 100% 56%;
+    --radius: 1rem;
+    --sidebar-background: 0 0% 3%;
+    --sidebar-foreground: 0 0% 45%;
+    --sidebar-primary: 0 100% 56%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 12%;
+    --sidebar-ring: 0 100% 56%;
+  }
+
+  .dark {
+    --background: 0 0% 2%;
+    --foreground: 0 0% 95%;
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 0 100% 56%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 24 100% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 0 0% 10%;
+    --accent-foreground: 0 0% 95%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 12%;
+    --input: 0 0% 12%;
+    --ring: 0 100% 56%;
+    --sidebar-background: 0 0% 3%;
+    --sidebar-foreground: 0 0% 45%;
+    --sidebar-primary: 0 100% 56%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 12%;
+    --sidebar-ring: 0 100% 56%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-card/60 backdrop-blur-2xl border border-border/30 rounded-2xl shadow-xl;
+  }
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_30px_-5px_hsl(0_100%_56%/0.25)];
+  }
+  .glow-primary {
+    box-shadow: 0 0 30px hsl(0 100% 56% / 0.25), 0 0 60px hsl(0 100% 56% / 0.12);
+  }
+  .glow-secondary {
+    box-shadow: 0 0 30px hsl(24 100% 50% / 0.25), 0 0 60px hsl(24 100% 50% / 0.12);
+  }
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+  }
+  .gradient-btn {
+    @apply bg-gradient-to-r from-primary to-secondary text-primary-foreground rounded-full font-semibold transition-all duration-300 hover:shadow-[0_0_30px_-3px_hsl(0_100%_56%/0.5)] hover:scale-105 active:scale-95;
+  }
+  .section-padding {
+    @apply py-16 md:py-24 px-4 md:px-8 lg:px-16;
+  }
+}

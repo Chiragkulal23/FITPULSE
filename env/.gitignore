@@ -1,0 +1,4 @@
+# Keep templates; ignore real secrets
+.env
+.env.local
+.env.*.local
